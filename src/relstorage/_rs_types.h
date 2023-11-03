@@ -111,6 +111,12 @@ namespace relstorage {
             this->destroy(other);
             this->deallocate(other, 1);
         }
+
+      template <class U>
+      struct rebind
+      {
+	using other = PythonAllocator<U>;
+      };
     };
 };
 
